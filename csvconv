@@ -1,0 +1,14 @@
+#!/usr/bin/env python
+import csv
+import sys
+from pathlib import Path
+
+
+def main():
+    rdr = csv.reader(Path(sys.argv[1]).open("r"))
+    wtr = csv.writer(Path(sys.argv[2]).open("w"), delimiter=";")
+    wtr.writerows(rdr)
+
+
+if __name__ == "__main__":
+    main()
